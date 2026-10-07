@@ -1,0 +1,151 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id           String   @id @default(uuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  phone        String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  trustedContacts TrustedContact[]
+  safetyJourneys  SafetyJourney[]
+  sosEvents       SosEvent[]
+  checkIns        CheckIn[]
+  incidents       Incident[]
+  journalEntries  JournalEntry[]
+  evidenceRecords EvidenceRecord[]
+  auditLogs      AuditLog[]
+}
+
+model TrustedContact {
+  id        String   @id @default(uuid())
+  name      String
+  phone     String
+  relation  String?
+  isPrimary Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model SafetyJourney {
+  id          String   @id @default(uuid())
+  destination String
+  status      String   @default("ACTIVE")
+  startedAt   DateTime @default(now())
+  endedAt     DateTime?
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  sosEvents SosEvent[]
+}
+
+model SosEvent {
+  id        String   @id @default(uuid())
+  status    String   @default("ACTIVE")
+  latitude  Float?
+  longitude Float?
+  createdAt DateTime @default(now())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  journeyId String?
+  journey   SafetyJourney? @relation(fields: [journeyId], references: [id], onDelete: SetNull)
+}
+
+model CheckIn {
+  id        String   @id @default(uuid())
+  status    String   @default("SAFE")
+  message   String?
+  location  String?
+  checkInAt DateTime @default(now())
+  expiresAt DateTime @default(now())
+  createdAt DateTime @default(now())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Incident {
+  id          String   @id @default(uuid())
+  category    String
+  subCategory String?
+  severity    String   @default("MEDIUM")
+  status      String   @default("DRAFT")
+  title       String
+  description String?
+
+  latitude    Float?
+  longitude   Float?
+
+  occurredAt DateTime?
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  journalEntries  JournalEntry[]
+  evidenceRecords EvidenceRecord[]
+}
+
+model JournalEntry {
+  id      String @id @default(uuid())
+  title   String
+  content String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  incidentId String?
+  incident   Incident? @relation(fields: [incidentId], references: [id], onDelete: SetNull)
+}
+
+model EvidenceRecord {
+  id String @id @default(uuid())
+
+  fileName    String
+  fileType    String
+  fileSize    Int?
+  storagePath String?
+  fileHash    String?
+
+  description String?
+
+  createdAt DateTime @default(now())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  incidentId String?
+  incident   Incident? @relation(fields: [incidentId], references: [id], onDelete: SetNull)
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  action    String
+  entity    String
+  entityId  String?
+  details   String?
+  ipAddress String?
+  userAgent String?
+  createdAt DateTime @default(now())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}

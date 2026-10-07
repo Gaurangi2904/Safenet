@@ -1,0 +1,1087 @@
+.help-someone-page {
+  min-height: 100vh;
+  background: var(--bg-primary, #f6f8fb);
+  color: var(--text-primary, #172033);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.help-someone-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid var(--border-color, #e5e9f0);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+}
+
+html[data-theme="dark"] .help-someone-header {
+  background: rgba(17, 24, 39, 0.92);
+}
+
+.help-someone-header-inner {
+  width: min(1180px, calc(100% - 40px));
+  min-height: 72px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.help-someone-back,
+.help-someone-theme {
+  border: 1px solid var(--border-color, #e5e9f0);
+  background: var(--card-bg, #ffffff);
+  color: var(--text-primary, #172033);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.help-someone-back {
+  min-height: 42px;
+  padding: 0 15px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.help-someone-back:hover,
+.help-someone-theme:hover {
+  transform: translateY(-1px);
+  border-color: #7c8cff;
+}
+
+.help-someone-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.help-someone-brand-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #eef1ff;
+  color: #4f46e5;
+}
+
+.help-someone-brand strong,
+.help-someone-brand span {
+  display: block;
+}
+
+.help-someone-brand strong {
+  font-size: 15px;
+  letter-spacing: 0.08em;
+}
+
+.help-someone-brand span {
+  margin-top: 2px;
+  color: var(--text-secondary, #697386);
+  font-size: 12px;
+}
+
+.help-someone-theme {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+}
+
+.help-someone-main {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 42px 0 70px;
+}
+
+.help-someone-hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 42px;
+  border: 1px solid var(--border-color, #e5e9f0);
+  border-radius: 26px;
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(236, 72, 153, 0.13),
+      transparent 32%
+    ),
+    var(--card-bg, #ffffff);
+  box-shadow: 0 18px 50px rgba(25, 35, 60, 0.07);
+}
+
+.help-someone-hero-icon {
+  flex: 0 0 auto;
+  width: 74px;
+  height: 74px;
+  border-radius: 22px;
+  display: grid;
+  place-items: center;
+  background: #fce7f3;
+  color: #db2777;
+}
+
+.help-someone-eyebrow,
+.help-someone-section-label,
+.help-someone-support-content > span,
+.help-someone-note > div > span {
+  color: #db2777;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.help-someone-hero h1 {
+  margin: 8px 0 12px;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.help-someone-hero p {
+  max-width: 720px;
+  margin: 0;
+  color: var(--text-secondary, #697386);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.help-someone-hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 22px;
+}
+
+.help-someone-hero-pills span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 11px;
+  border-radius: 999px;
+  background: var(--soft-bg, #f1f3f8);
+  color: var(--text-secondary, #697386);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.help-someone-alert {
+  margin-top: 22px;
+  padding: 18px 20px;
+  border: 1px solid rgba(239, 68, 68, 0.22);
+  border-radius: 18px;
+  background: rgba(254, 242, 242, 0.9);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+html[data-theme="dark"] .help-someone-alert {
+  background: rgba(127, 29, 29, 0.16);
+}
+
+.help-someone-alert-icon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(239, 68, 68, 0.12);
+  color: #dc2626;
+}
+
+.help-someone-alert strong {
+  display: block;
+  font-size: 14px;
+}
+
+.help-someone-alert p {
+  margin: 4px 0 0;
+  color: var(--text-secondary, #697386);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.help-someone-emergency-button {
+  margin-left: auto;
+  min-height: 42px;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 11px;
+  background: #dc2626;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+}
+
+.help-someone-action-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 22px;
+}
+
+.help-someone-action-card {
+  width: 100%;
+  padding: 19px;
+  border: 1px solid var(--border-color, #e5e9f0);
+  border-radius: 17px;
+  background: var(--card-bg, #ffffff);
+  color: var(--text-primary, #172033);
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  transition: all 0.2s ease;
+}
+
+.help-someone-action-card:hover {
+  transform: translateY(-2px);
+  border-color: #f9a8d4;
+  box-shadow: 0 12px 30px rgba(25, 35, 60, 0.07);
+}
+
+.help-someone-action-icon {
+  width: 43px;
+  height: 43px;
+  flex: 0 0 auto;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #fce7f3;
+  color: #db2777;
+}
+
+.help-someone-action-card strong,
+.help-someone-action-card span {
+  display: block;
+}
+
+.help-someone-action-card strong {
+  font-size: 14px;
+}
+
+.help-someone-action-card span {
+  margin-top: 4px;
+  color: var(--text-secondary, #697386);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.help-someone-section {
+  margin-top: 46px;
+}
+
+.help-someone-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.help-someone-section-heading h2 {
+  margin: 7px 0 5px;
+  font-size: 28px;
+  letter-spacing: -0.025em;
+}
+
+.help-someone-section-heading p {
+  margin: 0;
+  color: var(--text-secondary, #697386);
+  font-size: 14px;
+}
+
+.help-someone-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 12px;
+  border-radius: 999px;
+  background: var(--soft-bg, #f1f3f8);
+  color: var(--text-secondary, #697386);
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.help-someone-search {
+  margin-top: 22px;
+  min-height: 50px;
+  padding: 0 15px;
+  border: 1px solid var(--border-color, #e5e9f0);
+  border-radius: 14px;
+  background: var(--card-bg, #ffffff);
+  color: var(--text-secondary, #697386);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.help-someone-search:focus-within {
+  border-color: #f472b6;
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
+}
+
+.help-someone-search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text-primary, #172033);
+  font: inherit;
+  font-size: 14px;
+}
+
+.help-someone-topics {
+  display: grid;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.help-someone-topic {
+  overflow: hidden;
+  border: 1px solid var(--border-color, #e5e9f0);
+  border-radius: 17px;
+  background: var(--card-bg, #ffffff);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.help-someone-topic.is-open {
+  border-color: #f9a8d4;
+  box-shadow: 0 10px 30px rgba(25, 35, 60, 0.055);
+}
+
+.help-someone-topic-header {
+  width: 100%;
+  padding: 18px 19px;
+  border: 0;
+  background: transparent;
+  color: var(--text-primary, #172033);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+}
+
+.help-someone-topic-icon {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  background: #fce7f3;
+  color: #db2777;
+}
+
+.help-someone-topic-title {
+  min-width: 0;
+  flex: 1;
+}
+
+.help-someone-topic-title strong,
+.help-someone-topic-title span {
+  display: block;
+}
+
+.help-someone-topic-title strong {
+  font-size: 15px;
+}
+
+.help-someone-topic-title span {
+  margin-top: 4px;
+  color: var(--text-secondary, #697386);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.help-someone-topic-chevron {
+  color: var(--text-secondary, #697386);
+}
+
+.help-someone-topic-body {
+  padding: 0 22px 22px 77px;
+}
+
+.help-someone-topic-body h3 {
+  margin: 0 0 12px;
+  font-size: 13px;
+}
+
+.help-someone-topic-body ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.help-someone-topic-body li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: var(--text-secondary, #697386);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.help-someone-topic-body li svg {
+  flex: 0 0 auto;
+  margin-top: 3px;
+  color: #db2777;
+}
+
+.help-someone-empty {
+  min-height: 180px;
+  border: 1px dashed var(--border-color, #e5e9f0);
+  border-radius: 17px;
+  background: var(--card-bg, #ffffff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: var(--text-secondary, #697386);
+}
+
+.help-someone-empty strong {
+  color: var(--text-primary, #172033);
+  font-size: 15px;
+}
+
+.help-someone-empty span {
+  font-size: 13px;
+}
+
+.help-someone-note {
+  margin-top: 32px;
+  padding: 23px;
+  border: 1px solid var(--border-color, #e5e9f0);
+  border-radius: 20px;
+  background: var(--card-bg, #ffffff);
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.help-someone-note-icon {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 auto;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: #fce7f3;
+  color: #db2777;
+}
+
+.help-someone-note h2 {
+  margin: 5px 0 7px;
+  font-size: 19px;
+}
+
+.help-someone-note p {
+  max-width: 850px;
+  margin: 0;
+  color: var(--text-secondary, #697386);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.help-someone-support {
+  margin-top: 18px;
+  padding: 25px;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    #fce7f3,
+    #fff5fa
+  );
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+html[data-theme="dark"] .help-someone-support {
+  background: linear-gradient(
+    135deg,
+    rgba(219, 39, 119, 0.17),
+    rgba(236, 72, 153, 0.07)
+  );
+}
+
+.help-someone-support-icon {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(219, 39, 119, 0.1);
+  color: #db2777;
+}
+
+.help-someone-support-content {
+  flex: 1;
+}
+
+.help-someone-support-content h2 {
+  margin: 5px 0 7px;
+  font-size: 19px;
+}
+
+.help-someone-support-content p {
+  max-width: 760px;
+  margin: 0;
+  color: var(--text-secondary, #697386);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.help-someone-support-button {
+  flex: 0 0 auto;
+  min-height: 43px;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 11px;
+  background: #db2777;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+}
+
+.help-someone-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  padding: 20px;
+  background: rgba(10, 15, 30, 0.62);
+  display: grid;
+  place-items: center;
+}
+
+.help-someone-modal {
+  width: min(520px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding: 28px;
+  border-radius: 22px;
+  background: var(--card-bg, #ffffff);
+  color: var(--text-primary, #172033);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.22);
+}
+
+.help-someone-modal-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: #fce7f3;
+  color: #db2777;
+}
+
+.help-someone-modal h2 {
+  margin: 17px 0 8px;
+  font-size: 23px;
+}
+
+.help-someone-modal > p {
+  margin: 0;
+  color: var(--text-secondary, #697386);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.help-someone-modal ol {
+  margin: 20px 0 0;
+  padding-left: 21px;
+  color: var(--text-secondary, #697386);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.help-someone-modal li {
+  margin-bottom: 8px;
+}
+
+.help-someone-modal-actions {
+  margin-top: 22px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.help-someone-modal-secondary,
+.help-someone-modal-primary {
+  min-height: 42px;
+  padding: 0 15px;
+  border-radius: 11px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 800;
+}
+
+.help-someone-modal-secondary {
+  border: 1px solid var(--border-color, #e5e9f0);
+  background: transparent;
+  color: var(--text-primary, #172033);
+}
+
+.help-someone-modal-primary {
+  border: 0;
+  background: #db2777;
+  color: #fff;
+}
+
+@media (max-width: 850px) {
+  .help-someone-action-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .help-someone-hero {
+    padding: 30px;
+  }
+
+  .help-someone-support {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .help-someone-support-button {
+    margin-left: 63px;
+  }
+}
+
+@media (max-width: 650px) {
+  .help-someone-header-inner,
+  .help-someone-main {
+    width: min(100% - 24px, 1180px);
+  }
+
+  .help-someone-header-inner {
+    min-height: 64px;
+  }
+
+  .help-someone-back span {
+    display: none;
+  }
+
+  .help-someone-main {
+    padding-top: 24px;
+    padding-bottom: 45px;
+  }
+
+  .help-someone-hero {
+    display: block;
+    padding: 25px;
+    border-radius: 20px;
+  }
+
+  .help-someone-hero-icon {
+    margin-bottom: 20px;
+  }
+
+  .help-someone-hero h1 {
+    font-size: 32px;
+  }
+
+  .help-someone-alert {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .help-someone-emergency-button {
+    margin-left: 56px;
+  }
+
+  .help-someone-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .help-someone-topic-header {
+    padding: 15px;
+  }
+
+  .help-someone-topic-title span {
+    font-size: 12px;
+  }
+
+  .help-someone-topic-body {
+    padding: 0 17px 18px 17px;
+  }
+
+  .help-someone-topic-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .help-someone-note,
+  .help-someone-support {
+    padding: 19px;
+  }
+
+  .help-someone-support-button {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 430px) {
+  .help-someone-brand span {
+    display: none;
+  }
+
+  .help-someone-brand-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .help-someone-hero-pills {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .help-someone-emergency-button {
+    width: calc(100% - 56px);
+    justify-content: center;
+  }
+
+  .help-someone-modal {
+    padding: 22px;
+  }
+}
+/* =========================================================
+   SAFENET THEME SUPPORT
+========================================================= */
+
+/* DARK MODE */
+
+html[data-theme="dark"] .help-someone-page {
+  background: #030711;
+  color: #f5f7fc;
+}
+
+html[data-theme="dark"] .help-someone-page .help-someone-topbar {
+  background: #060c18;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+html[data-theme="dark"] .help-someone-page .help-someone-hero,
+html[data-theme="dark"] .help-someone-page .help-someone-card,
+html[data-theme="dark"] .help-someone-page .help-someone-guide-card,
+html[data-theme="dark"] .help-someone-page .help-someone-support-card,
+html[data-theme="dark"] .help-someone-page .help-someone-section {
+  background: #091321;
+  color: #f5f7fc;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+html[data-theme="dark"] .help-someone-page h1,
+html[data-theme="dark"] .help-someone-page h2,
+html[data-theme="dark"] .help-someone-page h3,
+html[data-theme="dark"] .help-someone-page strong {
+  color: #f5f7fc;
+}
+
+html[data-theme="dark"] .help-someone-page p,
+html[data-theme="dark"] .help-someone-page span {
+  color: #a8b5ca;
+}
+
+html[data-theme="dark"] .help-someone-page button {
+  color: #f5f7fc;
+}
+
+html[data-theme="dark"] .help-someone-page .help-someone-back-button,
+html[data-theme="dark"] .help-someone-page .help-someone-theme-button {
+  background: #091321;
+  color: #f5f7fc;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme="dark"] .help-someone-page .help-someone-guide-item,
+html[data-theme="dark"] .help-someone-page .help-someone-accordion,
+html[data-theme="dark"] .help-someone-page .help-someone-resource-card {
+  background: #0d192b;
+  color: #f5f7fc;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+html[data-theme="dark"] .help-someone-page .help-someone-emergency {
+  background: #241013;
+  border-color: rgba(239, 68, 68, 0.35);
+}
+
+html[data-theme="dark"] .help-someone-page .help-someone-footer {
+  background: #060c18;
+  color: #a8b5ca;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+
+/* LIGHT MODE */
+
+html[data-theme="light"] .help-someone-page {
+  background: #f6f8fc;
+  color: #111827;
+}
+
+html[data-theme="light"] .help-someone-page .help-someone-topbar {
+  background: #ffffff;
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+html[data-theme="light"] .help-someone-page .help-someone-hero,
+html[data-theme="light"] .help-someone-page .help-someone-card,
+html[data-theme="light"] .help-someone-page .help-someone-guide-card,
+html[data-theme="light"] .help-someone-page .help-someone-support-card,
+html[data-theme="light"] .help-someone-page .help-someone-section {
+  background: #ffffff;
+  color: #111827;
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+html[data-theme="light"] .help-someone-page h1,
+html[data-theme="light"] .help-someone-page h2,
+html[data-theme="light"] .help-someone-page h3,
+html[data-theme="light"] .help-someone-page strong {
+  color: #111827;
+}
+
+html[data-theme="light"] .help-someone-page p,
+html[data-theme="light"] .help-someone-page span {
+  color: #4b5563;
+}
+
+html[data-theme="light"] .help-someone-page .help-someone-back-button,
+html[data-theme="light"] .help-someone-page .help-someone-theme-button {
+  background: #ffffff;
+  color: #111827;
+  border-color: rgba(15, 23, 42, 0.1);
+}
+
+html[data-theme="light"] .help-someone-page .help-someone-guide-item,
+html[data-theme="light"] .help-someone-page .help-someone-accordion,
+html[data-theme="light"] .help-someone-page .help-someone-resource-card {
+  background: #ffffff;
+  color: #111827;
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+html[data-theme="light"] .help-someone-page .help-someone-emergency {
+  background: #fff5f5;
+  border-color: rgba(239, 68, 68, 0.25);
+}
+
+html[data-theme="light"] .help-someone-page .help-someone-footer {
+  background: #ffffff;
+  color: #4b5563;
+  border-color: rgba(15, 23, 42, 0.08);
+}
+/* =========================================================
+   COMPLETE DARK MODE FIX
+========================================================= */
+
+html[data-theme="dark"] .help-someone-page {
+  --bg-primary: #030711;
+  --text-primary: #f5f7fc;
+  --text-secondary: #a8b5ca;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --card-bg: #091321;
+  --soft-bg: #0d192b;
+}
+
+
+/* PAGE */
+
+html[data-theme="dark"] .help-someone-page {
+  background: #030711 !important;
+  color: #f5f7fc !important;
+}
+
+
+/* HEADER */
+
+html[data-theme="dark"] .help-someone-page .help-someone-header {
+  background: #060c18 !important;
+  color: #f5f7fc !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+
+/* ALL MAIN CARDS */
+
+html[data-theme="dark"] .help-someone-page .help-someone-card,
+html[data-theme="dark"] .help-someone-page .help-someone-support,
+html[data-theme="dark"] .help-someone-page .help-someone-guide,
+html[data-theme="dark"] .help-someone-page .help-someone-resource,
+html[data-theme="dark"] .help-someone-page .help-someone-support-card,
+html[data-theme="dark"] .help-someone-page .help-someone-guide-card,
+html[data-theme="dark"] .help-someone-page .help-someone-resource-card {
+  background: #091321 !important;
+  color: #f5f7fc !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+
+/* TEXT */
+
+html[data-theme="dark"] .help-someone-page h1,
+html[data-theme="dark"] .help-someone-page h2,
+html[data-theme="dark"] .help-someone-page h3,
+html[data-theme="dark"] .help-someone-page h4,
+html[data-theme="dark"] .help-someone-page strong {
+  color: #f5f7fc !important;
+}
+
+html[data-theme="dark"] .help-someone-page p {
+  color: #a8b5ca !important;
+}
+
+
+/* SPANS */
+
+html[data-theme="dark"] .help-someone-page span {
+  color: inherit;
+}
+
+
+/* DASHBOARD BUTTON */
+
+html[data-theme="dark"] .help-someone-page .help-someone-back-button {
+  background: #091321 !important;
+  color: #f5f7fc !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+
+/* THEME BUTTON */
+
+html[data-theme="dark"] .help-someone-page .help-someone-theme-button {
+  background: #091321 !important;
+  color: #f5f7fc !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+
+/* EMERGENCY AREA */
+
+html[data-theme="dark"] .help-someone-page .help-someone-alert,
+html[data-theme="dark"] .help-someone-page .help-someone-emergency {
+  background: #241013 !important;
+  color: #f5f7fc !important;
+  border-color: rgba(239, 68, 68, 0.35) !important;
+}
+
+
+/* EMERGENCY TEXT */
+
+html[data-theme="dark"] .help-someone-page .help-someone-alert strong,
+html[data-theme="dark"] .help-someone-page .help-someone-emergency strong {
+  color: #f5f7fc !important;
+}
+
+html[data-theme="dark"] .help-someone-page .help-someone-alert p,
+html[data-theme="dark"] .help-someone-page .help-someone-emergency p {
+  color: #a8b5ca !important;
+}
+
+
+/* FOOTER */
+
+html[data-theme="dark"] .help-someone-page .help-someone-footer {
+  background: #060c18 !important;
+  color: #a8b5ca !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+
+/* =========================================================
+   COMPLETE LIGHT MODE FIX
+========================================================= */
+
+html[data-theme="light"] .help-someone-page {
+  --bg-primary: #f6f8fc;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --border-color: rgba(15, 23, 42, 0.08);
+  --card-bg: #ffffff;
+  --soft-bg: #f7f9fd;
+}
+
+html[data-theme="light"] .help-someone-page {
+  background: #f6f8fc !important;
+  color: #111827 !important;
+}
+
+html[data-theme="light"] .help-someone-page .help-someone-header {
+  background: #ffffff !important;
+  color: #111827 !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+html[data-theme="light"] .help-someone-page .help-someone-card,
+html[data-theme="light"] .help-someone-page .help-someone-support,
+html[data-theme="light"] .help-someone-page .help-someone-guide,
+html[data-theme="light"] .help-someone-page .help-someone-resource,
+html[data-theme="light"] .help-someone-page .help-someone-support-card,
+html[data-theme="light"] .help-someone-page .help-someone-guide-card,
+html[data-theme="light"] .help-someone-page .help-someone-resource-card {
+  background: #ffffff !important;
+  color: #111827 !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+html[data-theme="light"] .help-someone-page h1,
+html[data-theme="light"] .help-someone-page h2,
+html[data-theme="light"] .help-someone-page h3,
+html[data-theme="light"] .help-someone-page h4,
+html[data-theme="light"] .help-someone-page strong {
+  color: #111827 !important;
+}
+
+html[data-theme="light"] .help-someone-page p {
+  color: #4b5563 !important;
+}
+
+html[data-theme="light"] .help-someone-page .help-someone-back-button,
+html[data-theme="light"] .help-someone-page .help-someone-theme-button {
+  background: #ffffff !important;
+  color: #111827 !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+html[data-theme="light"] .help-someone-page .help-someone-alert,
+html[data-theme="light"] .help-someone-page .help-someone-emergency {
+  background: #fff5f5 !important;
+  color: #111827 !important;
+  border-color: rgba(239, 68, 68, 0.25) !important;
+}
+
+html[data-theme="light"] .help-someone-page .help-someone-footer {
+  background: #ffffff !important;
+  color: #4b5563 !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}

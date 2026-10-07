@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment variables
+.env
+.env.*
+
+# Generated Prisma client
+/generated/prisma
+src/generated/prisma/
+
+# Private evidence uploads
+uploads/evidence/
+
+# Downloaded / temporary evidence
+downloaded-evidence.txt
+
+# AI / editor generated folders
+.agents/
+.claude/
+.cursor/
+.devin/
+.windsurf/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+test-evidence.txt

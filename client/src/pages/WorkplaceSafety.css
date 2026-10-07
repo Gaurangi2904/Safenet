@@ -1,0 +1,838 @@
+.workplace-safety-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(59, 130, 246, 0.12), transparent 28%),
+    radial-gradient(circle at 90% 10%, rgba(168, 85, 247, 0.1), transparent 25%),
+    var(--app-bg, #f6f8fc);
+  color: var(--app-text, #172033);
+}
+
+html[data-theme="dark"] .workplace-safety-page {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(59, 130, 246, 0.13), transparent 28%),
+    radial-gradient(circle at 90% 10%, rgba(168, 85, 247, 0.12), transparent 25%),
+    #0b1020;
+  color: #eef2ff;
+}
+
+.workplace-safety-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+  background: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(18px);
+}
+
+html[data-theme="dark"] .workplace-safety-header {
+  background: rgba(11, 16, 32, 0.84);
+}
+
+.workplace-safety-header-inner {
+  width: min(1180px, calc(100% - 32px));
+  min-height: 70px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.workplace-safety-back,
+.workplace-safety-theme {
+  border: 0;
+  cursor: pointer;
+  color: inherit;
+  background: transparent;
+}
+
+.workplace-safety-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.workplace-safety-back:hover,
+.workplace-safety-theme:hover {
+  background: rgba(148, 163, 184, 0.12);
+}
+
+.workplace-safety-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.workplace-safety-brand-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.22);
+}
+
+.workplace-safety-brand strong,
+.workplace-safety-brand span {
+  display: block;
+}
+
+.workplace-safety-brand strong {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+}
+
+.workplace-safety-brand span {
+  margin-top: 2px;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+html[data-theme="dark"] .workplace-safety-brand span {
+  color: #94a3b8;
+}
+
+.workplace-safety-theme {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+}
+
+.workplace-safety-main {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 42px 0 70px;
+}
+
+.workplace-safety-hero {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  padding: 38px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 28px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(37, 99, 235, 0.1),
+      rgba(124, 58, 237, 0.06)
+    ),
+    rgba(255, 255, 255, 0.74);
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.07);
+}
+
+html[data-theme="dark"] .workplace-safety-hero {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(37, 99, 235, 0.14),
+      rgba(124, 58, 237, 0.12)
+    ),
+    rgba(15, 23, 42, 0.68);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+.workplace-safety-hero-icon {
+  width: 66px;
+  height: 66px;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  color: white;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  box-shadow: 0 14px 32px rgba(37, 99, 235, 0.22);
+}
+
+.workplace-safety-eyebrow,
+.workplace-safety-section-label {
+  display: inline-block;
+  color: #6366f1;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.workplace-safety-hero h1 {
+  margin: 8px 0 10px;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+}
+
+.workplace-safety-hero p {
+  max-width: 720px;
+  margin: 0;
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+html[data-theme="dark"] .workplace-safety-hero p {
+  color: #aab5ca;
+}
+
+.workplace-safety-hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 22px;
+}
+
+.workplace-safety-hero-pills span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 11px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.58);
+  color: #475569;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+html[data-theme="dark"] .workplace-safety-hero-pills span {
+  background: rgba(30, 41, 59, 0.55);
+  color: #cbd5e1;
+}
+
+.workplace-safety-alert {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 17px 18px;
+  border: 1px solid rgba(245, 158, 11, 0.22);
+  border-radius: 18px;
+  background: rgba(245, 158, 11, 0.08);
+}
+
+.workplace-safety-alert-icon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: #b45309;
+  background: rgba(245, 158, 11, 0.13);
+}
+
+.workplace-safety-alert strong {
+  display: block;
+  font-size: 14px;
+}
+
+.workplace-safety-alert p {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+html[data-theme="dark"] .workplace-safety-alert p {
+  color: #aab5ca;
+}
+
+.workplace-safety-emergency-button {
+  margin-left: auto;
+  flex: 0 0 auto;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 15px;
+  border-radius: 11px;
+  color: white;
+  background: #dc2626;
+  font-weight: 800;
+}
+
+.workplace-safety-emergency-button:hover {
+  background: #b91c1c;
+}
+
+.workplace-safety-action-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.workplace-safety-action-card {
+  width: 100%;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 17px;
+  border-radius: 17px;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.72);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+html[data-theme="dark"] .workplace-safety-action-card {
+  background: rgba(15, 23, 42, 0.72);
+}
+
+.workplace-safety-action-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(99, 102, 241, 0.35);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.workplace-safety-action-icon {
+  width: 43px;
+  height: 43px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: #4f46e5;
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.workplace-safety-action-card strong,
+.workplace-safety-action-card span {
+  display: block;
+}
+
+.workplace-safety-action-card strong {
+  font-size: 14px;
+}
+
+.workplace-safety-action-card span {
+  margin-top: 3px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+html[data-theme="dark"] .workplace-safety-action-card span {
+  color: #94a3b8;
+}
+
+.workplace-safety-section {
+  margin-top: 54px;
+}
+
+.workplace-safety-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.workplace-safety-section-heading h2,
+.workplace-safety-support h2 {
+  margin: 7px 0;
+  font-size: 28px;
+  letter-spacing: -0.025em;
+}
+
+.workplace-safety-section-heading p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+html[data-theme="dark"] .workplace-safety-section-heading p {
+  color: #94a3b8;
+}
+
+.workplace-safety-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 12px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 999px;
+  color: #475569;
+  background: rgba(255, 255, 255, 0.68);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+html[data-theme="dark"] .workplace-safety-count {
+  color: #cbd5e1;
+  background: rgba(15, 23, 42, 0.68);
+}
+
+.workplace-safety-search {
+  margin-top: 20px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 15px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.74);
+}
+
+html[data-theme="dark"] .workplace-safety-search {
+  background: rgba(15, 23, 42, 0.74);
+}
+
+.workplace-safety-search svg {
+  color: #94a3b8;
+  flex: 0 0 auto;
+}
+
+.workplace-safety-search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  font-size: 13px;
+}
+
+.workplace-safety-search input::placeholder {
+  color: #94a3b8;
+}
+
+.workplace-safety-topics {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.workplace-safety-topic {
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 17px;
+  background: rgba(255, 255, 255, 0.74);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+html[data-theme="dark"] .workplace-safety-topic {
+  background: rgba(15, 23, 42, 0.74);
+}
+
+.workplace-safety-topic.is-open {
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.06);
+}
+
+.workplace-safety-topic-header {
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  color: inherit;
+  background: transparent;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  text-align: left;
+}
+
+.workplace-safety-topic-icon {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: #4f46e5;
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.workplace-safety-topic-title strong,
+.workplace-safety-topic-title span {
+  display: block;
+}
+
+.workplace-safety-topic-title strong {
+  font-size: 14px;
+}
+
+.workplace-safety-topic-title span {
+  margin-top: 4px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+html[data-theme="dark"] .workplace-safety-topic-title span {
+  color: #94a3b8;
+}
+
+.workplace-safety-topic-chevron {
+  color: #64748b;
+}
+
+.workplace-safety-topic-body {
+  padding: 0 20px 21px 75px;
+}
+
+.workplace-safety-topic-body h3 {
+  margin: 0 0 11px;
+  font-size: 13px;
+}
+
+.workplace-safety-topic-body ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 9px;
+}
+
+.workplace-safety-topic-body li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+html[data-theme="dark"] .workplace-safety-topic-body li {
+  color: #aab5ca;
+}
+
+.workplace-safety-topic-body li svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: #22c55e;
+}
+
+.workplace-safety-empty {
+  min-height: 160px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 7px;
+  border: 1px dashed rgba(148, 163, 184, 0.3);
+  border-radius: 17px;
+  color: #64748b;
+}
+
+.workplace-safety-empty strong {
+  color: inherit;
+}
+
+.workplace-safety-empty span {
+  font-size: 12px;
+}
+
+.workplace-safety-note {
+  margin-top: 54px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 17px;
+  padding: 24px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 20px;
+  background: rgba(59, 130, 246, 0.07);
+}
+
+.workplace-safety-note-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  color: #2563eb;
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.workplace-safety-note span,
+.workplace-safety-support-content > span {
+  color: #6366f1;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.workplace-safety-note h2 {
+  margin: 5px 0 6px;
+  font-size: 20px;
+}
+
+.workplace-safety-note p {
+  max-width: 780px;
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+html[data-theme="dark"] .workplace-safety-note p {
+  color: #aab5ca;
+}
+
+.workplace-safety-support {
+  margin-top: 54px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 20px;
+  padding: 28px;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 23px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(99, 102, 241, 0.1),
+      rgba(168, 85, 247, 0.06)
+    );
+}
+
+.workplace-safety-support-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  color: #4f46e5;
+  background: rgba(99, 102, 241, 0.11);
+}
+
+.workplace-safety-support-content h2 {
+  margin: 5px 0 6px;
+  font-size: 21px;
+}
+
+.workplace-safety-support-content p {
+  max-width: 680px;
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+html[data-theme="dark"] .workplace-safety-support-content p {
+  color: #aab5ca;
+}
+
+.workplace-safety-support-button {
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 15px;
+  border-radius: 11px;
+  color: white;
+  background: #4f46e5;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.workplace-safety-support-button:hover {
+  background: #4338ca;
+}
+
+.workplace-safety-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(2, 6, 23, 0.62);
+  backdrop-filter: blur(7px);
+}
+
+.workplace-safety-modal {
+  width: min(500px, 100%);
+  padding: 27px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 22px;
+  color: #172033;
+  background: white;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.24);
+}
+
+html[data-theme="dark"] .workplace-safety-modal {
+  color: #eef2ff;
+  background: #111827;
+}
+
+.workplace-safety-modal-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  color: #4f46e5;
+  background: rgba(99, 102, 241, 0.11);
+}
+
+.workplace-safety-modal h2 {
+  margin: 17px 0 8px;
+  font-size: 23px;
+}
+
+.workplace-safety-modal p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+html[data-theme="dark"] .workplace-safety-modal p {
+  color: #aab5ca;
+}
+
+.workplace-safety-modal ol {
+  margin: 18px 0 0;
+  padding-left: 20px;
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+html[data-theme="dark"] .workplace-safety-modal ol {
+  color: #cbd5e1;
+}
+
+.workplace-safety-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-top: 23px;
+}
+
+.workplace-safety-modal-secondary,
+.workplace-safety-modal-primary {
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 14px;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+.workplace-safety-modal-secondary {
+  color: #475569;
+  background: #eef2f7;
+}
+
+.workplace-safety-modal-primary {
+  color: white;
+  background: #4f46e5;
+}
+
+@media (max-width: 900px) {
+  .workplace-safety-action-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workplace-safety-support {
+    grid-template-columns: auto 1fr;
+  }
+
+  .workplace-safety-support-button {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+}
+
+@media (max-width: 700px) {
+  .workplace-safety-hero {
+    grid-template-columns: 1fr;
+    padding: 27px;
+  }
+
+  .workplace-safety-hero-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .workplace-safety-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .workplace-safety-topic-body {
+    padding: 0 17px 18px;
+  }
+
+  .workplace-safety-note {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .workplace-safety-header-inner,
+  .workplace-safety-main {
+    width: min(100% - 22px, 1180px);
+  }
+
+  .workplace-safety-header-inner {
+    min-height: 62px;
+  }
+
+  .workplace-safety-back span {
+    display: none;
+  }
+
+  .workplace-safety-main {
+    padding-top: 25px;
+  }
+
+  .workplace-safety-hero {
+    padding: 23px;
+    border-radius: 21px;
+  }
+
+  .workplace-safety-hero h1 {
+    font-size: 34px;
+  }
+
+  .workplace-safety-alert {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .workplace-safety-emergency-button {
+    margin-left: 56px;
+  }
+
+  .workplace-safety-topic-header {
+    padding: 15px;
+  }
+
+  .workplace-safety-topic-title span {
+    display: none;
+  }
+
+  .workplace-safety-support {
+    grid-template-columns: 1fr;
+    padding: 22px;
+  }
+
+  .workplace-safety-support-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .workplace-safety-modal {
+    padding: 22px;
+  }
+}

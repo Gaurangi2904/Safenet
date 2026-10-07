@@ -1,0 +1,1326 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+/* =========================================================
+   SAFENET CHECK-IN PAGE
+   ========================================================= */
+
+.checkin-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #f6f8fb;
+  color: #111827;
+  font-family: "DM Sans", sans-serif;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+/* =========================================================
+   DARK THEME
+   ========================================================= */
+
+[data-theme="dark"] .checkin-page {
+  background: #090d14;
+  color: #f3f4f6;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.checkin-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+[data-theme="dark"] .checkin-header {
+  background: #111827;
+  border-bottom-color: #253044;
+}
+
+.checkin-header-inner {
+  width: calc(100% - 48px);
+  max-width: 1380px;
+  min-height: 76px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+}
+
+/* =========================================================
+   HEADER BUTTONS
+   ========================================================= */
+
+.checkin-back-button,
+.checkin-sos-button {
+  min-height: 42px;
+  padding: 0 15px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.checkin-back-button {
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #111827;
+}
+
+[data-theme="dark"] .checkin-back-button {
+  border-color: #253044;
+  background: #111827;
+  color: #f3f4f6;
+}
+
+.checkin-back-button:hover {
+  transform: translateX(-2px);
+  border-color: #2563eb;
+}
+
+.checkin-sos-button {
+  border: 1px solid #b91c1c;
+  background: #b91c1c;
+  color: #ffffff;
+}
+
+.checkin-sos-button:hover {
+  transform: translateY(-1px);
+  background: #991b1b;
+}
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.checkin-brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.checkin-brand-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  background: #111827;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .checkin-brand-icon {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.checkin-brand div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.checkin-brand strong {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.checkin-brand span {
+  color: #667085;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+[data-theme="dark"] .checkin-brand span {
+  color: #9aa6b7;
+}
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.checkin-main {
+  width: calc(100% - 48px);
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 54px 0 70px;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.checkin-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(340px, 0.75fr);
+  gap: 34px;
+  align-items: stretch;
+  margin-bottom: 28px;
+}
+
+.checkin-hero-copy {
+  padding: 26px 0;
+}
+
+.checkin-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 17px;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+[data-theme="dark"] .checkin-eyebrow {
+  color: #60a5fa;
+}
+
+.checkin-hero h1 {
+  max-width: 720px;
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(42px, 5vw, 70px);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.checkin-hero-copy > p {
+  max-width: 650px;
+  margin: 24px 0 28px;
+  color: #667085;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+[data-theme="dark"] .checkin-hero-copy > p {
+  color: #9aa6b7;
+}
+
+/* =========================================================
+   USER
+   ========================================================= */
+
+.checkin-user {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  padding: 9px 13px 9px 9px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+[data-theme="dark"] .checkin-user {
+  border-color: #253044;
+  background: #111827;
+}
+
+.checkin-user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: #f8fafc;
+  color: #2563eb;
+}
+
+[data-theme="dark"] .checkin-user-avatar {
+  background: #151e2c;
+  color: #60a5fa;
+}
+
+.checkin-user div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.checkin-user span {
+  color: #667085;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+[data-theme="dark"] .checkin-user span {
+  color: #9aa6b7;
+}
+
+.checkin-user strong {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   STATUS CARD
+   ========================================================= */
+
+.checkin-status-card {
+  position: relative;
+  overflow: hidden;
+  padding: 31px;
+  border: 1px solid #e5e7eb;
+  border-radius: 26px;
+  background: #ffffff;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.07);
+}
+
+[data-theme="dark"] .checkin-status-card {
+  border-color: #253044;
+  background: #111827;
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.25);
+}
+
+.checkin-status-card::after {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  opacity: 0.08;
+}
+
+.checkin-status-card.active::after {
+  background: #16a34a;
+}
+
+.checkin-status-card.overdue::after {
+  background: #dc2626;
+}
+
+.checkin-status-card.inactive::after {
+  background: #2563eb;
+}
+
+.checkin-status-icon {
+  width: 55px;
+  height: 55px;
+  margin-bottom: 24px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+}
+
+.checkin-status-card.active .checkin-status-icon {
+  background: #ecfdf3;
+  color: #16a34a;
+}
+
+.checkin-status-card.overdue .checkin-status-icon {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.checkin-status-card.inactive .checkin-status-icon {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+[data-theme="dark"] .checkin-status-card.active .checkin-status-icon {
+  background: rgba(22, 163, 74, 0.13);
+  color: #4ade80;
+}
+
+[data-theme="dark"] .checkin-status-card.overdue .checkin-status-icon {
+  background: rgba(220, 38, 38, 0.13);
+  color: #f87171;
+}
+
+[data-theme="dark"] .checkin-status-card.inactive .checkin-status-icon {
+  background: rgba(37, 99, 235, 0.13);
+  color: #60a5fa;
+}
+
+.checkin-status-label,
+.checkin-card-kicker {
+  display: block;
+  color: #667085;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+}
+
+[data-theme="dark"] .checkin-status-label,
+[data-theme="dark"] .checkin-card-kicker {
+  color: #9aa6b7;
+}
+
+.checkin-status-card h2 {
+  margin: 7px 0 10px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.checkin-status-card p {
+  margin: 0 0 26px;
+  color: #667085;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+[data-theme="dark"] .checkin-status-card p {
+  color: #9aa6b7;
+}
+
+.checkin-status-line {
+  padding-top: 17px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 12px;
+}
+
+[data-theme="dark"] .checkin-status-line {
+  border-top-color: #253044;
+}
+
+.checkin-status-line span {
+  color: #667085;
+}
+
+[data-theme="dark"] .checkin-status-line span {
+  color: #9aa6b7;
+}
+
+.checkin-status-card.active .checkin-status-line strong {
+  color: #16a34a;
+}
+
+.checkin-status-card.overdue .checkin-status-line strong {
+  color: #dc2626;
+}
+
+.checkin-status-card.inactive .checkin-status-line strong {
+  color: #667085;
+}
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.checkin-message {
+  min-height: 50px;
+  margin-bottom: 24px;
+  padding: 13px 15px;
+  border: 1px solid rgba(22, 163, 74, 0.22);
+  border-radius: 13px;
+  background: #ecfdf3;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .checkin-message {
+  background: rgba(22, 163, 74, 0.13);
+  color: #4ade80;
+}
+
+.checkin-message button {
+  margin-left: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: currentColor;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.checkin-grid,
+.checkin-lower-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-bottom: 22px;
+}
+
+/* =========================================================
+   GENERAL CARD
+   ========================================================= */
+
+.checkin-card {
+  padding: 27px;
+  border: 1px solid #e5e7eb;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.07);
+}
+
+[data-theme="dark"] .checkin-card {
+  border-color: #253044;
+  background: #111827;
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.25);
+}
+
+.checkin-card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.checkin-card-heading h2 {
+  margin: 6px 0 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.checkin-card-icon {
+  width: 43px;
+  height: 43px;
+  flex: 0 0 auto;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #f8fafc;
+  color: #2563eb;
+}
+
+[data-theme="dark"] .checkin-card-icon {
+  background: #151e2c;
+  color: #60a5fa;
+}
+
+.checkin-card-description {
+  margin: 17px 0 25px;
+  color: #667085;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+[data-theme="dark"] .checkin-card-description {
+  color: #9aa6b7;
+}
+
+/* =========================================================
+   INTERVAL
+   ========================================================= */
+
+.interval-section {
+  margin-bottom: 24px;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 10px;
+  color: #667085;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+[data-theme="dark"] .field-label {
+  color: #9aa6b7;
+}
+
+.interval-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.interval-button {
+  min-height: 70px;
+  border: 1px solid #e5e7eb;
+  border-radius: 13px;
+  background: #f8fafc;
+  color: #111827;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+[data-theme="dark"] .interval-button {
+  border-color: #253044;
+  background: #151e2c;
+  color: #f3f4f6;
+}
+
+.interval-button:hover {
+  transform: translateY(-2px);
+  border-color: #2563eb;
+}
+
+.interval-button.selected {
+  border-color: #2563eb;
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+[data-theme="dark"] .interval-button.selected {
+  border-color: #60a5fa;
+  background: rgba(37, 99, 235, 0.13);
+  color: #60a5fa;
+}
+
+.interval-button strong {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 21px;
+}
+
+.interval-button span {
+  margin-top: 2px;
+  color: #667085;
+  font-size: 10px;
+}
+
+.interval-button.selected span {
+  color: #2563eb;
+}
+
+[data-theme="dark"] .interval-button span {
+  color: #9aa6b7;
+}
+
+[data-theme="dark"] .interval-button.selected span {
+  color: #60a5fa;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.checkin-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.primary-checkin-button,
+.secondary-checkin-button,
+.journey-link-button,
+.emergency-button {
+  min-height: 48px;
+  padding: 0 17px;
+  border-radius: 12px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.primary-checkin-button {
+  flex: 1;
+  border: 1px solid #111827;
+  background: #111827;
+  color: #ffffff;
+}
+
+.primary-checkin-button:hover {
+  transform: translateY(-1px);
+  background: #263143;
+}
+
+[data-theme="dark"] .primary-checkin-button {
+  border-color: #f3f4f6;
+  background: #f3f4f6;
+  color: #111827;
+}
+
+[data-theme="dark"] .primary-checkin-button:hover {
+  background: #ffffff;
+}
+
+.secondary-checkin-button {
+  border: 1px solid #e5e7eb;
+  background: transparent;
+  color: #111827;
+}
+
+[data-theme="dark"] .secondary-checkin-button {
+  border-color: #253044;
+  color: #f3f4f6;
+}
+
+.secondary-checkin-button:hover {
+  border-color: #dc2626;
+  color: #dc2626;
+}
+
+/* =========================================================
+   NEXT CHECK-IN
+   ========================================================= */
+
+.checkin-next-card {
+  min-height: 100%;
+}
+
+.checkin-next-card .checkin-card-heading h2 {
+  font-size: 37px;
+  letter-spacing: -0.045em;
+}
+
+.countdown {
+  margin-top: 27px;
+  padding: 21px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #f8fafc;
+}
+
+[data-theme="dark"] .countdown {
+  border-color: #253044;
+  background: #151e2c;
+}
+
+.countdown span {
+  display: block;
+  color: #667085;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+[data-theme="dark"] .countdown span {
+  color: #9aa6b7;
+}
+
+.countdown strong {
+  display: block;
+  margin-top: 4px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 35px;
+  letter-spacing: 0.03em;
+}
+
+.countdown.overdue {
+  border-color: rgba(220, 38, 38, 0.25);
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+[data-theme="dark"] .countdown.overdue {
+  background: rgba(220, 38, 38, 0.13);
+  color: #f87171;
+}
+
+.countdown.overdue span {
+  color: #dc2626;
+}
+
+[data-theme="dark"] .countdown.overdue span {
+  color: #f87171;
+}
+
+/* =========================================================
+   NEXT CHECK-IN DETAILS
+   ========================================================= */
+
+.next-checkin-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 13px;
+}
+
+.next-checkin-details div {
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+[data-theme="dark"] .next-checkin-details div {
+  border-color: #253044;
+  background: #151e2c;
+}
+
+.next-checkin-details span {
+  display: block;
+  margin-bottom: 5px;
+  color: #667085;
+  font-size: 10px;
+}
+
+[data-theme="dark"] .next-checkin-details span {
+  color: #9aa6b7;
+}
+
+.next-checkin-details strong {
+  font-size: 12px;
+}
+
+/* =========================================================
+   INACTIVE STATE
+   ========================================================= */
+
+.inactive-next {
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #667085;
+  text-align: center;
+}
+
+[data-theme="dark"] .inactive-next {
+  color: #9aa6b7;
+}
+
+.inactive-next svg {
+  margin-bottom: 12px;
+  color: #2563eb;
+}
+
+[data-theme="dark"] .inactive-next svg {
+  color: #60a5fa;
+}
+
+.inactive-next p {
+  max-width: 360px;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   HISTORY
+   ========================================================= */
+
+.history-card,
+.safety-info-card {
+  min-height: 390px;
+}
+
+.empty-history {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #667085;
+  text-align: center;
+}
+
+[data-theme="dark"] .empty-history {
+  color: #9aa6b7;
+}
+
+.empty-history svg {
+  margin-bottom: 12px;
+  color: #2563eb;
+}
+
+[data-theme="dark"] .empty-history svg {
+  color: #60a5fa;
+}
+
+.empty-history h3 {
+  margin: 0 0 5px;
+  color: #111827;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 17px;
+}
+
+[data-theme="dark"] .empty-history h3 {
+  color: #f3f4f6;
+}
+
+.empty-history p {
+  max-width: 330px;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.history-list {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 14px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+[data-theme="dark"] .history-item {
+  border-bottom-color: #253044;
+}
+
+.history-item:last-child {
+  border-bottom: 0;
+}
+
+.history-icon {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+}
+
+.history-icon.safe {
+  background: #ecfdf3;
+  color: #16a34a;
+}
+
+.history-icon.started {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.history-icon.ended {
+  background: #f8fafc;
+  color: #667085;
+}
+
+[data-theme="dark"] .history-icon.safe {
+  background: rgba(22, 163, 74, 0.13);
+  color: #4ade80;
+}
+
+[data-theme="dark"] .history-icon.started {
+  background: rgba(37, 99, 235, 0.13);
+  color: #60a5fa;
+}
+
+[data-theme="dark"] .history-icon.ended {
+  background: #151e2c;
+  color: #9aa6b7;
+}
+
+.history-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.history-content strong {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.history-content span {
+  color: #667085;
+  font-size: 11px;
+}
+
+[data-theme="dark"] .history-content span {
+  color: #9aa6b7;
+}
+
+/* =========================================================
+   SAFETY INFORMATION
+   ========================================================= */
+
+.safety-info-list {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.safety-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.safety-info-item-icon {
+  width: 37px;
+  height: 37px;
+  flex: 0 0 auto;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+[data-theme="dark"] .safety-info-item-icon {
+  background: rgba(37, 99, 235, 0.13);
+  color: #60a5fa;
+}
+
+.safety-info-item strong {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.safety-info-item p {
+  margin: 0;
+  color: #667085;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+[data-theme="dark"] .safety-info-item p {
+  color: #9aa6b7;
+}
+
+.journey-link-button {
+  width: 100%;
+  margin-top: 21px;
+  border: 1px solid #e5e7eb;
+  background: transparent;
+  color: #111827;
+}
+
+[data-theme="dark"] .journey-link-button {
+  border-color: #253044;
+  color: #f3f4f6;
+}
+
+.journey-link-button:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+[data-theme="dark"] .journey-link-button:hover {
+  border-color: #60a5fa;
+  color: #60a5fa;
+}
+
+/* =========================================================
+   EMERGENCY SECTION
+   ========================================================= */
+
+.checkin-emergency {
+  padding: 23px 25px;
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  border-radius: 22px;
+  background: #fef2f2;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+[data-theme="dark"] .checkin-emergency {
+  background: rgba(220, 38, 38, 0.13);
+}
+
+.emergency-icon {
+  width: 50px;
+  height: 50px;
+  flex: 0 0 auto;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: #ffffff;
+  color: #dc2626;
+}
+
+[data-theme="dark"] .emergency-icon {
+  background: #111827;
+  color: #f87171;
+}
+
+.emergency-copy {
+  flex: 1;
+}
+
+.emergency-copy > span {
+  color: #dc2626;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+[data-theme="dark"] .emergency-copy > span {
+  color: #f87171;
+}
+
+.emergency-copy h2 {
+  margin: 3px 0 3px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 19px;
+}
+
+.emergency-copy p {
+  margin: 0;
+  color: #667085;
+  font-size: 12px;
+}
+
+[data-theme="dark"] .emergency-copy p {
+  color: #9aa6b7;
+}
+
+.emergency-button {
+  min-width: 130px;
+  border: 1px solid #dc2626;
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.emergency-button:hover {
+  transform: translateY(-1px);
+  background: #b91c1c;
+}
+
+.emergency-arrow {
+  transform: rotate(180deg);
+}
+
+/* =========================================================
+   DISCLAIMER
+   ========================================================= */
+
+.checkin-disclaimer {
+  margin-top: 18px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 7px;
+  color: #667085;
+  font-size: 11px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+[data-theme="dark"] .checkin-disclaimer {
+  color: #9aa6b7;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.checkin-footer {
+  padding: 24px max(24px, calc((100% - 1380px) / 2));
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: #667085;
+  font-size: 11px;
+}
+
+[data-theme="dark"] .checkin-footer {
+  border-top-color: #253044;
+  color: #9aa6b7;
+}
+
+.checkin-footer div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkin-footer strong {
+  color: #111827;
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: 0.08em;
+}
+
+[data-theme="dark"] .checkin-footer strong {
+  color: #f3f4f6;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 980px) {
+  .checkin-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .checkin-hero-copy {
+    padding-bottom: 0;
+  }
+
+  .checkin-grid,
+  .checkin-lower-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .checkin-status-card {
+    max-width: none;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 680px) {
+  .checkin-header-inner,
+  .checkin-main {
+    width: calc(100% - 28px);
+  }
+
+  .checkin-header-inner {
+    min-height: 68px;
+    gap: 8px;
+  }
+
+  .checkin-brand {
+    position: static;
+    transform: none;
+  }
+
+  .checkin-brand span,
+  .checkin-back-button span {
+    display: none;
+  }
+
+  .checkin-brand-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .checkin-back-button,
+  .checkin-sos-button {
+    width: 42px;
+    padding: 0;
+  }
+
+  .checkin-main {
+    padding: 34px 0 50px;
+  }
+
+  .checkin-hero h1 {
+    font-size: 43px;
+  }
+
+  .checkin-hero-copy > p {
+    font-size: 15px;
+  }
+
+  .checkin-status-card,
+  .checkin-card {
+    padding: 21px;
+    border-radius: 18px;
+  }
+
+  .interval-options {
+    gap: 7px;
+  }
+
+  .interval-button {
+    min-height: 64px;
+  }
+
+  .checkin-actions {
+    flex-direction: column;
+  }
+
+  .primary-checkin-button,
+  .secondary-checkin-button {
+    width: 100%;
+  }
+
+  .next-checkin-details {
+    grid-template-columns: 1fr;
+  }
+
+  .checkin-emergency {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .emergency-copy {
+    min-width: calc(100% - 70px);
+  }
+
+  .emergency-button {
+    width: 100%;
+  }
+
+  .checkin-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px 14px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+  .checkin-header-inner {
+    gap: 6px;
+  }
+
+  .checkin-brand {
+    gap: 7px;
+  }
+
+  .checkin-brand strong {
+    font-size: 13px;
+  }
+
+  .checkin-brand-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .checkin-hero h1 {
+    font-size: 37px;
+  }
+
+  .checkin-next-card .checkin-card-heading h2 {
+    font-size: 31px;
+  }
+
+  .countdown strong {
+    font-size: 29px;
+  }
+
+  .checkin-card-heading h2 {
+    font-size: 21px;
+  }
+}
