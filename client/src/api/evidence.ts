@@ -1,6 +1,5 @@
 import axios from "axios";
-
-const API_URL = "http://localhost:5000/api/v1";
+import { API_URL } from "./config";
 
 const getAuthHeaders = () => {
   const token = localStorage.getItem("safenet_token");
@@ -71,7 +70,6 @@ export const createEvidenceRecord = async (
   return response.data;
 };
 
-
 // UPLOAD ACTUAL EVIDENCE FILE
 export const uploadEvidenceFile = async (
   file: File,
@@ -110,7 +108,6 @@ export const uploadEvidenceFile = async (
   return response.data;
 };
 
-
 export const deleteEvidenceRecord = async (
   id: string
 ) => {
@@ -124,7 +121,6 @@ export const deleteEvidenceRecord = async (
   return response.data;
 };
 
-
 // Returns the secure backend endpoint.
 // Authorization must be supplied when requesting
 // the actual file.
@@ -133,7 +129,6 @@ export const getEvidenceFileUrl = (
 ) => {
   return `${API_URL}/evidence/file/${id}`;
 };
-
 
 export const verifyEvidenceIntegrity = async (
   id: string

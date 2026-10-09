@@ -1,6 +1,5 @@
 import axios from "axios";
-
-const API_URL = "http://localhost:5000/api/v1";
+import { API_URL } from "./config";
 
 export interface JournalEntry {
   id: string;
